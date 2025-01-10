@@ -21,7 +21,7 @@ extern void AVR_Output_Pixel(uint16_t Color, uint8_t AddressX, uint8_t AddressY)
 extern void AVR_Output_All(uint16_t Color);
 
 /// @brief Set the active memory to the screen and the screen to the active memory
-extern void AVR_Swap_Buffer(void);
+extern void AVR_Swap_Buffer(uint8_t bufferID);
 
 /// @brief Read the input pins and return the value
 /// @return input value from PORTB

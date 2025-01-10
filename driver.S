@@ -4,8 +4,8 @@
 #define RG_DDR _SFR_IO_ADDR(DDRA)
 #define RG_PORT_DIR 0xFF
 
-#define GB_PORT_MEM _SFR_IO_ADDR(PORTF)
-#define GB_DDR_MEM _SFR_IO_ADDR(DDRF)
+#define GB_PORT_MEM PORTF
+#define GB_DDR_MEM DDRF
 #define GB_PORT_DIR 0xFF
 
 #define AX_PORT _SFR_IO_ADDR(PORTC)
@@ -16,8 +16,8 @@
 #define AY_DDR _SFR_IO_ADDR(DDRD)
 #define AY_PORT_DIR 0xFF
 
-#define ACTIVE_PORT_MEM _SFR_IO_ADDR(PORTG)
-#define ACTIVE_DDR_MEM _SFR_IO_ADDR(DDRG)
+#define ACTIVE_PORT_MEM PORTG
+#define ACTIVE_DDR_MEM DDRG
 #define ACTIVE_PORT_DIR (1 << 4)
 
 ;***** AVR_Init *****
@@ -38,6 +38,7 @@ AVR_Init:
 	st		X,			r25
 	ldi		XL,			ACTIVE_DDR_MEM
 	st		X,			r25
+	clr 	r25
 	ret
 
 ;***** AVR_Output_Pixel *****
@@ -88,12 +89,12 @@ AVR_Output_All:
 
 .global AVR_Swap_Buffer
 AVR_Swap_Buffer:
-	lds		r25,		ActiveMemory
-	eor		r25,		ACTIVE_PORT_DIR
-	sts		ActiveMemory,	r25
+	;lds		r25,		ActiveMemory
+	;eor		r25,		ACTIVE_PORT_DIR
+	;sts		ActiveMemory,	r25
 	clr		XH
 	ldi		XL,			ACTIVE_PORT_MEM
-	st		X,			r25
+	st		X,			r24
 	ret
 
 ;***** AVR_Read_Inputs *****
