@@ -4,6 +4,7 @@
 #include <stdint.h>
 
 void print(const char *str);
+void print(int i);
 void SwapBuffer();
 void DrawPixel(uint8_t x, uint8_t y, uint8_t R, uint8_t G, uint8_t B);
 
