@@ -1,5 +1,6 @@
 #include "RayTracing.h"
 #include "include/Display.h"
+#include "include/IO.h"
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -276,7 +277,7 @@ int RayMain(void){
   print("RayMain");
   int32_t a = 0;
   print("m = ");
-    print(m);
+    printInt(m);
     print("\n");
   for (uint32_t i = 0; i < m; i++)
   {

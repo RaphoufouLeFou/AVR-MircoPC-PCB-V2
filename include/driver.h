@@ -40,17 +40,17 @@ extern void AVR_Send_UART(uint8_t data);
 
 /// @brief Receive a byte over UART
 /// @return received byte
-extern uint8_t AVR_Receive_UART();
+extern uint8_t AVR_Receive_UART(void);
 
 /// @brief Receive a string over UART
 /// @param buffer buffer to store the received string
 extern void AVR_Receive_UART_String(uint8_t *buffer);
 
 /// @brief Delay for 1 second
-extern void AVR_Delay();
+extern void AVR_Delay(void);
 
 /// @brief Delay for 10ms
-extern void AVR_Delay_10ms();
+extern void AVR_Delay_10ms(void);
 
 /// @brief Read the EEPROM at the given address
 /// @param adress address to read from (0-4096)
@@ -61,7 +61,7 @@ extern uint8_t AVR_Read_Rom(uint16_t adress);
 /// @param adress address to write to (0-4096)
 /// @param data data to write to the given address
 extern void AVR_Write_Rom(uint16_t adress, uint8_t data);
-extern uint16_t AVR_DEBUG();
+extern uint16_t AVR_DEBUG(void);
 
 #ifdef __cplusplus
 }
