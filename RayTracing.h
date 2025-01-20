@@ -1,3 +1,8 @@
-#pragma once
+// Made by : Raphael Clerault
 
-int RayMain(void);
+#ifndef _RAYTRACING_H_
+#define _RAYTRACING_H_
+
+int RayMain(int argc, char **argv);
+
+#endif // _RAYTRACING_H_

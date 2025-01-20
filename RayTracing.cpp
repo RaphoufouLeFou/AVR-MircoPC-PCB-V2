@@ -1,3 +1,5 @@
+// Made by : Raphael Clerault, with the help of Leo Daloz
+
 #include "RayTracing.h"
 #include "include/Display.h"
 #include "include/IO.h"
@@ -7,8 +9,8 @@
 #include <stdint.h>
 
 #include <math.h>
-#define RAPH_RTX
-//#define LEO_RTX
+//#define RAPH_RTX
+#define LEO_RTX
 
 #ifdef RAPH_RTX
 
@@ -271,7 +273,7 @@ void pixel(uint8_t x, uint8_t y) {
     SwapBuffer();
 }
 
-int RayMain(void){
+int RayMain(int argc, char **argv) {
 
   //AVR_Output_Pixel(RED, 64, 32);
   print("RayMain");
@@ -293,13 +295,10 @@ int RayMain(void){
       
   }
   //AVR_Output_Pixel(GREEN, 32, 32);
-  
+    return 0;
 }
 
-#endif // FIRST_RTX
-
-
-
+#endif // RAPH_RTX
 
 #ifdef LEO_RTX
 
@@ -612,9 +611,6 @@ void draw_sqr(int32_t x, int32_t y, Vec3 col) {
     for (int32_t j = x; j < x + s && j < WIDTH; j++){
         for (int32_t i = y; i < y + s && i < HEIGHT; i++){
             DrawPixel((int)j, (int)i, r, g, b);
-            SwapBuffer();
-            DrawPixel((int)j, (int)i, r, g, b);
-            SwapBuffer();
         }
     }
 }
@@ -671,15 +667,17 @@ void pixel_antialiasing(float x, float y, int factor = 2) {
     draw_sqr(x, y, r); 
 }
 
-int RayMain(void){
+int RayMain(int argc, char **argv)
+{
+    ClearAllBuffers();
+    DrawString("Rendering...", 128 - 12/2 * 5, 60, 255, 255, 255, CLIP_TO_RECT);
+    SwapBuffer();
     for (int32_t y = 0; y < HEIGHT; y += s) {
-        print("progress: ");
-        print(y * 100 / HEIGHT);
-        print("%\n");
         for (int32_t x = 0; x < WIDTH; x += s) {
             pixel(x, y);
         }
     }
+    SwapBuffer();
 }
 
 #endif // LEO_RTX

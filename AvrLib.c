@@ -1,4 +1,8 @@
+// Made by : Raphael Clerault
+
+#include "include/Display.h"
 #include "include/driver.h"
+#include "include/AvrLib.h"
 
 #define F_CPU 20000000L
 
@@ -12,6 +16,5 @@ void Init(void)
 {
     AVR_Init();
     InitUART(9600);
+    ClearAllBuffers();
 }
-
-

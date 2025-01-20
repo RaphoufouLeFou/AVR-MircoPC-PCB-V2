@@ -1,3 +1,5 @@
+; Made by : Raphael Clerault
+
 #include <avr/io.h>
 
 #define RG_PORT _SFR_IO_ADDR(PORTA)

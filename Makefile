@@ -1,4 +1,4 @@
-# Variables
+# Made by : Raphael Clerault
 MCU = atmega128a
 F_CPU = 20000000L
 CFLAGS = -O3 -w -mmcu=$(MCU) -DF_CPU=$(F_CPU)
@@ -8,7 +8,6 @@ SRCS = $(wildcard *.c *.cpp *.S)
 OBJS = $(SRCS:.c=.o) $(SRCS:.cpp=.o) $(SRCS:.S=.o)
 TARGET = main
 
-# Règles
 all: $(TARGET).hex
 
 %.o: %.c
