@@ -1,4 +1,6 @@
-// Made by : Raphael Clerault, with the help of Leo Daloz
+// Made by : Leo Daloz with the help of Raphael Clerault
+// Original python algorithm by Leo Daloz
+// C++ implementation by Raphael Clerault and Leo Daloz
 
 #include "RayTracing.h"
 #include "include/Display.h"
@@ -635,16 +637,19 @@ void pixel(float x, float y) {
 }
 
 
-void pixel_antialiasing(float x, float y, int factor = 2) {
+void pixel_antialiasing(float x, float y) {
     // fisheye, supports >180° fov
     // float a1 = rot[0] + tan((y - (HEIGHT>>1))*d), a2 = rot[1] + tan((x - (WIDTH>>1))*d);
     // Vec3 mov = {cos(a1)*sin(a2), -sin(a1), -cos(a1)*cos(a2)};
+    int factor = 2;
     Vec3 cols[16];
-    for(int i = 0; i < factor * factor; i++)
+    int indexes[4] = {1, 7, 8, 14};
+    int upFactor = 4;
+    for (int i = 0; i < factor * factor; i++)
     {
-        cols[i] = Vec3(0, 0, 0);
-        float dx = m * ratio * ((x + (i % factor) * (1.0f / (float)factor)) / (float)WIDTH - 0.5f);
-        float dy = -m * ((y + (i / factor) * (1.0f / (float)factor)) / (float)HEIGHT - 0.5f);
+        cols[indexes[i]] = Vec3(0, 0, 0);
+        float dx = m * ratio * ((x + (indexes[i] % upFactor) * (1.0f / (float)upFactor)) / (float)WIDTH - 0.5f);
+        float dy = -m * ((y + (indexes[i] / upFactor) * (1.0f / (float)upFactor)) / (float)HEIGHT - 0.5f);
         float dz = -1;
         float cos0 = cos(rot[0]), sin0 = sin(rot[0]), cos1 = cos(rot[1]), sin1 = sin(rot[1]);
         // rotate ray according to camera
@@ -657,14 +662,14 @@ void pixel_antialiasing(float x, float y, int factor = 2) {
         cols[i] = ray(cam, mov, N);
     }
     Vec3 r = Vec3(0, 0, 0);
-    for(int i = 0; i < factor * factor; i++)
+    for (int i = 0; i < factor * factor; i++)
     {
         r = r + cols[i];
     }
     r.x = r.x / (factor * factor);
     r.y = r.y / (factor * factor);
     r.z = r.z / (factor * factor);
-    draw_sqr(x, y, r); 
+    draw_sqr(x, y, r);
 }
 
 int RayMain(int argc, char **argv)
@@ -674,7 +679,7 @@ int RayMain(int argc, char **argv)
     SwapBuffer();
     for (int32_t y = 0; y < HEIGHT; y += s) {
         for (int32_t x = 0; x < WIDTH; x += s) {
-            pixel(x, y);
+            pixel_antialiasing(x, y);
         }
     }
     SwapBuffer();
