@@ -2,11 +2,11 @@
 <html style="font-size: 16px;" lang="fr"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="AVR-MicroPC V3">
+    <meta name="keywords" content="RAY TRACING​​, Software, Hardware, ​Antialiasing">
     <meta name="description" content="">
-    <title>AVR-MicroPC-V3</title>
+    <title>Rendering</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="AVR-MicroPC-V3.css" media="screen">
+<link rel="stylesheet" href="Rendering.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 7.2.3, nicepage.com">
@@ -15,6 +15,7 @@
     
     
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i">
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
@@ -24,7 +25,7 @@
 		]
 }</script>
     <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="AVR-MicroPC-V3">
+    <meta property="og:title" content="Rendering">
     <meta property="og:type" content="website">
   <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="./" data-include-products="true" class="u-body u-xl-mode" data-lang="fr"><header class="u-box-shadow u-clearfix u-grey-10 u-header u-header" id="sec-300f" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
@@ -63,23 +64,17 @@
           </div>
         </nav>
       </div></header>
-    <section class="u-clearfix u-image u-section-1" id="sec-a3bc" data-image-width="1487" data-image-height="1115">
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1"></div>
-    </section>
-    <section class="u-clearfix u-section-2" id="sec-9d06">
+    <section class="skrollable u-clearfix u-image u-shading u-section-1" id="sec-9505" data-image-width="2035" data-image-height="1143">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h1 class="u-align-center u-text u-text-default u-text-1">AVR-MicroPC V3<br>
-        </h1>
-        <p class="u-align-center u-text u-text-default u-text-2">Performance :<br>- 20Mhz CPU<br>- 128 KB of ROM<br>- 4KB of RAM<br>-​ 128 KB of VRAM<br>
-          <br>Outputs at 256x128 with 16 bits per pixels
-        </p>
-        <p class="u-align-center u-text u-text-default u-text-3">2 copies was made so far, but more can be made</p>
-        <h2 class="u-align-center u-text u-text-default u-text-4">Improvements<br>
+        <h1 class="u-align-center u-custom-font u-font-ubuntu u-text u-text-1"> 3D RENDERING</h1>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-2" id="sec-da87">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-align-center u-custom-font u-font-ubuntu u-text u-text-1">Software<br>
         </h2>
-        <p class="u-align-left u-text u-text-5">- Double buffer VRAM, wich allows for better image quality with less artefacts, and faster CPU Memory access<br>- Smaller DAC to keep the board the same size with more chips<br>- Faster oscillator (16MHz -&gt; 20MHz)<br>- Better chips placement<br>- More buffer avoid drawing on the screen when not needed, removing the duplication of the image.<br>- The USB port was moved to an edge for usability
+        <p class="u-align-center u-text u-text-2"> I'v coded some software 3D renderer in the past. The first one was written in C for <a href="https://github.com/RaphoufouLeFou/Doom-console-ESP32" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" target="_blank">game console</a>. It was a very simple one that only drawn the edges of cubes, with single color. After that, I'v coded better one in C++ with SLD2. This time, it could render in real-time multiple cubes with simples texture and player mouvements.<br>Finally, I'v coded antoher one in Assembly for the AVR-MicroPC. This one was verry simple, and could draw the edges of one white cube, without any rotation or texture, but with player mouvements. It took aproximatly 1200 lines of&nbsp;<a href="https://github.com/RaphoufouLeFou/AVR-microPC/blob/main/src/Renderer8bit.asm" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2" target="_blank">code</a>, but it was fast, and can run at 30FPS, using only 56 Bytes of RAM
         </p>
-        <h2 class="u-align-center u-text u-text-6">Issue</h2>
-        <p class="u-align-center u-text u-text-7">There is still one issue in this version, but not critical, and can be fixed by soldering 2 external wires, as seen in the images. It is due to a small conception error.</p>
       </div>
     </section>
     

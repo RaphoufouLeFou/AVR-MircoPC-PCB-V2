@@ -15,7 +15,7 @@ void print(const char *str)
 
 void printInt(int i)
 {
-    char buffer[10];
+    char buffer[7];
     itoa(i, buffer, 10);
     print(buffer);
 }

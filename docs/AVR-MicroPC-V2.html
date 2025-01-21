@@ -19,7 +19,10 @@
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
-		"name": "AVR-MicroPC-V3"
+		"name": "AVR-MicroPC-V3",
+		"sameAs": [
+				"https://github.com/RaphoufouLeFou/AVR-MircoPC-PCB-V2"
+		]
 }</script>
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="AVR-MicroPC-V2">
@@ -41,6 +44,7 @@
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="AVR-MicroPC-V2.html" style="padding: 10px 20px;">V2</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="AVR-MicroPC-V3.html" style="padding: 10px 20px;">V3</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Order.html" style="padding: 10px 20px;">Order</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Capabilities.html" style="padding: 10px 20px;">Capabilities</a>
 </li></ul>
           </div>
           <div class="u-custom-menu u-nav-container-collapse">
@@ -52,6 +56,7 @@
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="AVR-MicroPC-V2.html">V2</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="AVR-MicroPC-V3.html">V3</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Order.html">Order</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Capabilities.html">Capabilities</a>
 </li></ul>
               </div>
             </div>
@@ -59,8 +64,8 @@
           </div>
         </nav>
       </div></header>
-    <section class="u-border-2 u-border-grey-75 u-clearfix u-gradient u-image u-section-1" id="sec-796c" data-image-width="1261" data-image-height="1681">
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1"></div>
+    <section class="u-border-2 u-border-grey-75 u-clearfix u-container-align-center u-gradient u-image u-section-1" id="sec-796c" data-image-width="1976" data-image-height="1976">
+      <div class="u-clearfix u-sheet u-sheet-1"></div>
     </section>
     <section class="u-clearfix u-section-2" id="sec-2b8d">
       <div class="u-clearfix u-sheet u-sheet-1">
@@ -99,6 +104,9 @@
                       <h2 class="u-text u-text-3">Second prototype</h2>
                       <p class="u-align-left u-text u-text-4">The second prototype outputed a wrong signal, with less pixels, but it could partialy be corrected via software.<br>Only one copy was made
                       </p>
+                      <h5 class="u-align-left u-text u-text-5">Fixies :<br>
+                        <br>- Exposed pins of the CPU so it can be flashed with a bootloader<br>- Fixed some chips connected incorrecly<br>- Added metal pads on some corrner for easier ​ocilloscope connection
+                      </h5>
                     </div>
                   </div>
                   <div class="u-container-style u-image u-layout-cell u-size-30 u-image-2" data-image-width="2072" data-image-height="2072">
@@ -113,9 +121,12 @@
                   </div>
                   <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-6">
                     <div class="u-container-layout u-container-layout-6">
-                      <h2 class="u-text u-text-5">Third prototype</h2>
-                      <p class="u-text u-text-6">The last prototype worked perfectly except for one detail, the image was repeted to fill the display</p>
-                      <img class="u-expanded-width u-image u-image-default u-image-4" src="images/20241124_230018.jpg" alt="" data-image-width="1576" data-image-height="881">
+                      <h2 class="u-text u-text-6">Third prototype</h2>
+                      <p class="u-text u-text-7">The last prototype worked perfectly except for one detail, the image was repeted to fill the display</p>
+                      <h5 class="u-align-left u-text u-text-8">Fixies :<br>
+                        <br>- Fixed some wrong wiring in the VGA unit<br>- Added pulldown resistor for the VRAM write signal&nbsp;
+                      </h5>
+                      <img class="custom-expanded u-image u-image-default u-image-4" src="images/20241124_230018.jpg" alt="" data-image-width="1576" data-image-height="881">
                     </div>
                   </div>
                 </div>
@@ -131,8 +142,27 @@ background-color: rgba(0,0,0,0.8588235294117647) !important
     
     
     
-    <footer class="u-align-center u-clearfix u-container-align-center u-footer u-grey-80 u-footer" id="sec-0436"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <p class="u-small-text u-text u-text-variant u-text-1">AVR-MicroPC</p>
+    <footer class="u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-footer u-grey-80" id="sec-0436"><div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-align-left u-social-icons u-spacing-9 u-social-icons-1">
+          <a class="u-social-url" target="_blank" data-type="Github" title="Github" href="https://github.com/RaphoufouLeFou/AVR-MircoPC-PCB-V2">
+            <span class="u-icon u-social-github u-social-icon u-icon-1">
+              <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xlink:href="#svg-19cc"></use></svg>
+              <svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-19cc"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M88,51.3c0-5.5-1.9-10.2-5.3-13.7c0.6-1.3,2.3-6.5-0.5-13.5c0,0-4.2-1.4-14,5.3c-4.1-1.1-8.4-1.7-12.7-1.8
+	c-4.3,0-8.7,0.6-12.7,1.8c-9.7-6.6-14-5.3-14-5.3c-2.8,7-1,12.2-0.5,13.5C25,41.2,23,45.7,23,51.3c0,19.6,11.9,23.9,23.3,25.2
+	c-1.5,1.3-2.8,3.5-3.2,6.8c-3,1.3-10.2,3.6-14.9-4.3c0,0-2.7-4.9-7.8-5.3c0,0-5-0.1-0.4,3.1c0,0,3.3,1.6,5.6,7.5c0,0,3,9.1,17.2,6
+	c0,4.3,0.1,8.3,0.1,9.5h25.2c0-1.7,0.1-7.2,0.1-14c0-4.7-1.7-7.9-3.4-9.4C76,75.2,88,70.9,88,51.3z"></path></svg>
+            </span>
+          </a>
+        </div>
+        <p class="u-align-center-lg u-align-center-md u-align-center-xl u-text u-text-1">AVR-MicroPC</p>
       </div></footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+      <p class="u-text">
+        <span>This site was created with the </span>
+        <a class="u-link" href="https://nicepage.com/" target="_blank" rel="nofollow">
+          <span>Nicepage</span>
+        </a>
+      </p>
+    </section>
   
 </body></html>

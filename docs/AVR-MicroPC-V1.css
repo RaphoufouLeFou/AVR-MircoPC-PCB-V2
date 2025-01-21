@@ -30,13 +30,11 @@
     min-height: 203px;
   }
 }.u-section-2 .u-sheet-1 {
-  min-height: 400px;
+  min-height: 1267px;
 }
 
 .u-section-2 .u-text-1 {
-  margin-bottom: 0;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 20px auto 0;
 }
 
 .u-section-2 .u-text-2 {
@@ -48,7 +46,98 @@
 }
 
 .u-section-2 .u-text-4 {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 60px;
+  margin: 20px auto 0;
+}
+
+.u-section-2 .u-gallery-1 {
+  height: 745px;
+  width: 1691px;
+  margin: 20px -275px 0;
+}
+
+.u-section-2 .u-gallery-inner-1 {
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 16px;
+}
+
+.u-section-2 .u-back-image-1 {
+  object-position: 50% 34.93%;
+}
+
+.u-section-2 .u-over-slide-1 {
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2));
+  padding: 20px;
+}
+
+.u-section-2 .u-over-slide-2 {
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2));
+  padding: 20px;
+}
+
+.u-section-2 .u-over-slide-3 {
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2));
+  padding: 20px;
+}
+
+.u-section-2 .u-back-image-4 {
+  object-position: 50% 55.4%;
+}
+
+.u-section-2 .u-over-slide-4 {
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2));
+  padding: 20px;
+}
+
+.u-section-2 .u-text-5 {
+  margin: 30px auto 60px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-2 .u-sheet-1 {
+    min-height: 936px;
+  }
+
+  .u-section-2 .u-gallery-1 {
+    height: 414px;
+    width: 940px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-2 .u-sheet-1 {
+    min-height: 1790px;
+  }
+
+  .u-section-2 .u-gallery-1 {
+    height: 1268px;
+    width: 720px;
+  }
+
+  .u-section-2 .u-gallery-inner-1 {
+    grid-template-columns: repeat(1, auto);
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-2 .u-sheet-1 {
+    min-height: 1473px;
+  }
+
+  .u-section-2 .u-gallery-1 {
+    height: 951px;
+    width: 540px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-2 .u-sheet-1 {
+    min-height: 1121px;
+  }
+
+  .u-section-2 .u-gallery-1 {
+    height: 599px;
+    width: 340px;
+  }
 }
