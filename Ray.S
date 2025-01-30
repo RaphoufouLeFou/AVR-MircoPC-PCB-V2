@@ -68,6 +68,8 @@ NegateVector3:
     st -X, r17      ; Res.zh
     ret
 
+
+
 ;***** NormalizeVector3 *****
 ;	input:
 ;	X, Vector3 Address
