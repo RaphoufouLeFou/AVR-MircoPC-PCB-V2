@@ -641,7 +641,7 @@ void pixel_antialiasing(float x, float y) {
     // fisheye, supports >180° fov
     // float a1 = rot[0] + tan((y - (HEIGHT>>1))*d), a2 = rot[1] + tan((x - (WIDTH>>1))*d);
     // Vec3 mov = {cos(a1)*sin(a2), -sin(a1), -cos(a1)*cos(a2)};
-    int factor = 2;
+    uint8_t factor = 2;
     Vec3 cols[16];
     int indexes[4] = {1, 7, 8, 14};
     int upFactor = 4;
@@ -677,8 +677,8 @@ int RayMain(int argc, char **argv)
     ClearAllBuffers();
     DrawString("Rendering...", 128 - 12/2 * 5, 60, 255, 255, 255, CLIP_TO_RECT);
     SwapBuffer();
-    for (int32_t y = 0; y < HEIGHT; y += s) {
-        for (int32_t x = 0; x < WIDTH; x += s) {
+    for (int16_t y = 0; y < HEIGHT; y += s) {
+        for (int16_t x = 0; x < WIDTH; x += s) {
             pixel_antialiasing(x, y);
         }
     }
